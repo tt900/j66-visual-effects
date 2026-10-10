@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J66 - Visual Filters Studio</title>
+    <meta
+      name="description"
+      content="J66 transforms emotion into visuals with cinematic filters, premium presets, and luxury motion design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+          <a href="#top" class="brand" aria-label="J66 home">
+            <span class="brand-mark">J66</span>
+            <span class="brand-text">Visual Filters</span>
+          </a>
+
+          <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div id="main-nav" class="nav-links" data-open="false">
+            <a href="#library">Library</a>
+            <a href="#effects">Effects</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#about">About</a>
+            <button type="button" class="nav-cta">Explore</button>
+          </div>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero container">
+          <div class="hero-copy">
+            <span class="eyebrow">Luxury visual design system</span>
+            <h1>Filters that sculpt emotion into every frame.</h1>
+            <p>
+              Build cinematic, tactile visuals with premium glow treatments,
+              atmospheric blur, grain textures, and refined color grading.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#library" class="primary-btn">Explore Library</a>
+              <a href="#effects" class="secondary-btn">View Effects</a>
+            </div>
+
+            <ul class="stats" aria-label="Key metrics">
+              <li><strong>120+</strong><span>Presets</span></li>
+              <li><strong>4K</strong><span>Ready</span></li>
+              <li><strong>24/7</strong><span>Creative flow</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Visual preview panels">
+            <div class="visual-card card-a">
+              <span>Velvet Noir</span>
+            </div>
+            <div class="visual-card card-b">
+              <span>Prism Mist</span>
+            </div>
+            <div class="visual-card card-c">
+              <span>Solar Fade</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="library" class="section container">
+          <div class="section-heading">
+            <span class="eyebrow">Preset Library</span>
+            <h2>Curated looks for immersive storytelling.</h2>
+          </div>
+
+          <div class="preset-grid">
+            <article class="preset-card">
+              <div class="card-swatch swatch-1"></div>
+              <h3>Velvet Noir</h3>
+              <p>Deep contrast and elevated mood for luxury editing.</p>
+            </article>
+
+            <article class="preset-card">
+              <div class="card-swatch swatch-2"></div>
+              <h3>Solar Fade</h3>
+              <p>Warm, cinematic tone with golden texture and glow.</p>
+            </article>
+
+            <article class="preset-card">
+              <div class="card-swatch swatch-3"></div>
+              <h3>Prism Mist</h3>
+              <p>Dreamlike diffusion with airy gradients and color bloom.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="effects" class="section muted-section">
+          <div class="container split-layout">
+            <div>
+              <span class="eyebrow">Visual effects</span>
+              <h2>Craft atmosphere with precise control.</h2>
+            </div>
+
+            <div class="effect-list">
+              <div>
+                <h3>Glow</h3>
+                <p>Stretch light across the frame with elegant bloom.</p>
+              </div>
+              <div>
+                <h3>Blur</h3>
+                <p>Soften the edges and add cinematic depth.</p>
+              </div>
+              <div>
+                <h3>Grain</h3>
+                <p>Introduce analog character and tactile richness.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="workflow" class="section container">
+          <div class="section-heading">
+            <span class="eyebrow">Creative workflow</span>
+            <h2>Frame. Layer. Refine.</h2>
+          </div>
+
+          <div class="workflow-grid">
+            <article>
+              <span>01</span>
+              <h3>Frame</h3>
+              <p>Build a visual mood with composition and tone.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Layer</h3>
+              <p>Add atmospheric filters and tonal blending.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Refine</h3>
+              <p>Balance clarity, glow, and cinematic softness.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="about" class="site-footer">
+        <div class="container footer-inner">
+          <p>© <span id="year"></span> J66 Visual Filters Studio</p>
+          <a href="#top">Back to top</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

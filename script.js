@@ -7,29 +7,58 @@ const menuButton = document.querySelector('.menu-button');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuButton && navLinks) {
-  menuButton.addEventListener('click', () => {
-    const isOpen = navLinks.style.display === 'flex';
-    navLinks.style.display = isOpen ? 'none' : 'flex';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '76px';
-    navLinks.style.left = '1rem';
-    navLinks.style.right = '1rem';
-    navLinks.style.padding = '1rem';
-    navLinks.style.border = '1px solid rgba(148, 163, 184, 0.2)';
-    navLinks.style.borderRadius = '16px';
-    navLinks.style.background = 'rgba(15, 23, 42, 0.9)';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.alignItems = 'flex-start';
+  const closeMenu = () => {
+    navLinks.classList.remove('is-open');
+    navLinks.dataset.open = 'false';
+    menuButton.setAttribute('aria-expanded', 'false');
+  };
+
+  const openMenu = () => {
+    navLinks.classList.add('is-open');
+    navLinks.dataset.open = 'true';
+    menuButton.setAttribute('aria-expanded', 'true');
+  };
+
+  const toggleMenu = () => {
+    const isOpen = navLinks.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  menuButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleMenu();
+  });
+
+  document.addEventListener('click', (event) => {
+    const clickedInside = menuButton.contains(event.target) || navLinks.contains(event.target);
+    if (!clickedInside) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
   });
 }
 
-const presets = document.querySelectorAll('.preset-card');
-presets.forEach((card) => {
-  card.addEventListener('mouseenter', () => {
+const presetCards = document.querySelectorAll('.preset-card');
+presetCards.forEach((card) => {
+  const applyHover = () => {
     card.style.boxShadow = '0 18px 40px rgba(56, 189, 248, 0.16)';
-  });
+  };
 
-  card.addEventListener('mouseleave', () => {
+  const removeHover = () => {
     card.style.boxShadow = 'none';
-  });
+  };
+
+  card.addEventListener('mouseenter', applyHover);
+  card.addEventListener('mouseleave', removeHover);
+  card.addEventListener('focusin', applyHover);
+  card.addEventListener('focusout', removeHover);
 });
